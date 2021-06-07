@@ -1,0 +1,373 @@
+{
+	"info": {
+		"_postman_id": "160d676f-833e-442d-bb46-6645f3463660",
+		"name": "Reposteria",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Postres",
+			"item": [
+				{
+					"name": "/postres",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"suspiro a la limeña\",\r\n    \"porcion\": \"Personal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/postres",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"postres"
+							]
+						},
+						"description": "Endppoint para crear un nuevo postre"
+					},
+					"response": []
+				},
+				{
+					"name": "/postres",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/postres",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"postres"
+							]
+						},
+						"description": "Punto que me devuelve todos los postres"
+					},
+					"response": []
+				},
+				{
+					"name": "/postres/<id>",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:5000/postres/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"postres",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/postres/<id>",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:5000/postres/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"postres",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/postres/<id>",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Tiramisu\",\r\n    \"porcion\":\"Personal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:5000/postres/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"postres",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/busqueda_postre",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Suspiro Limeño\",\r\n    \"porcion\": \"Familiar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/busqueda_postre?nombre=Tacacho&porcion=Personal",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"busqueda_postre"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Tacacho"
+								},
+								{
+									"key": "porcion",
+									"value": "Personal"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Preparacion",
+			"item": [
+				{
+					"name": "/preparaciones",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orden\":1,\r\n    \"descripcion\":\"Medir los ingredientes y tenerlos listos\",\r\n    \"postre_id\":7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:5000/preparacion",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"preparacion"
+							]
+						},
+						"description": "ponto de inicio para preparacion"
+					},
+					"response": []
+				},
+				{
+					"name": "/preparaciones/<int:id>",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:5000/preparaciones/7",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"preparaciones",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ingredientes",
+			"item": [
+				{
+					"name": "/ingredientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:5000/ingredientes",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"ingredientes"
+							]
+						},
+						"description": "Endpoint para ingredientes"
+					},
+					"response": []
+				},
+				{
+					"name": "/ingredientes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Harina 000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:5000/ingredientes",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"ingredientes"
+							]
+						},
+						"description": "Endpoint para la creacion de un ingrediente"
+					},
+					"response": []
+				},
+				{
+					"name": "/ingredientes/<int:id>",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:5000/ingredientes/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"ingredientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ingredientes/<int:id>",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Polvo de hornear\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:5000/ingredientes/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"ingredientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "127.0.0.1:5000"
+		}
+	]
+}
