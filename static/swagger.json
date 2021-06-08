@@ -9,7 +9,7 @@
       "name": "Anibal Lajo"
     }
   },
-  "host": "127.0.0.1:5000",
+  "host": "reposteria-flask-eduardo-deriv.herokuapp.com",
   "basePath": "/",
   "schemes": [
     "https"
